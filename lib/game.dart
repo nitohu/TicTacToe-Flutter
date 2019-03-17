@@ -24,8 +24,6 @@ class _TicTacToeState extends State<TicTacToe> {
     [0,3,6], [1,4,7], [2,5,8],  // columns
     [0,1,2], [3,4,5], [6,7,8]   //  rows
   ];
-  final String player0Char = "X";
-  final String player1Char = "O";
 
   _TicTacToeState() {
     for(int i = 0; i < 9; i++) {
@@ -71,11 +69,11 @@ class _TicTacToeState extends State<TicTacToe> {
     } else if(buttons[id].isEmpty && buttons[4] != "Reset") {
       setState(() {
         if(_activePlayer == 0) {
-          buttons[id] = player0Char;
+          buttons[id] = "X";
           _activePlayer = 1;
           player0Fields.add(id);
         } else {
-          buttons[id] = player1Char;
+          buttons[id] = "O";
           _activePlayer = 0;
           player1Fields.add(id);
         }
